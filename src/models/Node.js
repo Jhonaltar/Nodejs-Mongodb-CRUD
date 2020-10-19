@@ -10,6 +10,14 @@ const NoteSchema = new Schema ({
         type: String,
         required : true
     },
+    validationCustom04: {
+        type: String,
+        required : true
+    },
+    observation: {
+        type: String,
+        required : true
+    },
     status: {
         type: Boolean,
         default: true
