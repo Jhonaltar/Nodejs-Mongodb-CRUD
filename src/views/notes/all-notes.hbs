@@ -22,6 +22,18 @@
 	<div class="card border-primary wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1) ">
+            {{!-- {{#if va '==' COMPLETADO}}  
+                <span class="badge badge-pill badge-primary">{{validationCustom04}}</span>  
+            {{else}}   
+            {{#if va '==' COMPLETADO}}  
+                <span class="badge badge-pill badge-success">{{validationCustom04}}</span>
+            {{else}}      
+                <span class="badge badge-pill badge-danger">{{validationCustom04}}</span>    
+            {{/if}}  
+            {{/if}} --}}
+
+           
+            
           <span class="badge badge-pill badge-primary">{{validationCustom04}}</span>
             <center><i class="fa fa-tasks" style="color:#16A085"></i></center>
             
@@ -83,46 +95,6 @@
                         
                     </form>
 
-                {{!-- <div id = "accordion">
-            <div class = "card">
-               <div class = "card-header">
-                  <a class = "card-link" data-toggle = "collapse" href = "#collapseOne">
-                     Accordion #1
-                  </a>
-               </div>
-               
-               <div id = "collapseOne" class = "collapse show" data-parent = "#accordion">
-                  <div class = "card-body">Content for Accordion #1.</div>
-               </div>
-            </div>
-            
-            <div class = "card">
-               <div class = "card-header">
-                  <a class = "collapsed card-link" data-toggle = "collapse" href = "#collapseTwo">
-                     Accordion #2
-                  </a>
-               </div>
-               
-               <div id = "collapseTwo" class = "collapse" data-parent = "#accordion">
-                  <div class = "card-body">Content for Accordion #2.</div>
-               </div>
-            </div>
-            
-            <div class = "card">
-               <div class = "card-header">
-                  <a class = "collapsed card-link" data-toggle = "collapse" href = "#collapseThree">
-                     Accordion #3
-                  </a>
-               </div>
-               
-               <div id = "collapseThree" class = "collapse" data-parent = "#accordion">
-                  <div class = "card-body"> Content for Accordion #3.</div>
-               </div>
-            </div>
-            
-         </div> --}}
-
-
         </div>
                     
        
@@ -139,16 +111,27 @@
 					{{updatedAt}}
                 </div>
             </div> --}}
+
+            {{#if status}}
             <span class="badge badge-pill badge-success">Activado  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                                             <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"></path>
                                         </svg></span>
+            {{else}}
+            <span class="badge badge-pill badge-dark">Desactivado  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                                            <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"></path>
+                                        </svg></span>
+            {{/if}}
+
+            
     </div>
         
       </div>
       </div>
       {{/each}}
     </div>
+
 
 
 <script>
@@ -172,7 +155,7 @@ $("#accordion").on("shown.bs.collapse", e => {
 });
 */
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 
   $(".toggle-accordion").on("click", function() {
     var accordionId = $(this).attr("accordion-id"),
@@ -196,6 +179,7 @@ $(document).ready(function() {
     $(aId + ' .panel-collapse.in').collapse('hide');
   }
      
-});
+});*/
 
 </script>
+

@@ -19,7 +19,7 @@ noteCtrl.createNewNote = async (req, res) => {
 noteCtrl.renderNotes = async (req, res) =>{
     const notes = await Note.find();
 
-    res.render('notes/all-notes',{notes}) 
+    res.render('notes/all-notes',{title:"Notas" ,notes}) 
 }
 
 noteCtrl.renderEditForm = (req ,res )=> {
